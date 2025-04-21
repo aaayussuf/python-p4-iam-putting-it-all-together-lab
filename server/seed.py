@@ -11,6 +11,9 @@ fake = Faker()
 
 with app.app_context():
 
+    # Create tables if they don't exist
+    db.create_all()
+
     print("Deleting all records...")
     Recipe.query.delete()
     User.query.delete()
